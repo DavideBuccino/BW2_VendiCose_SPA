@@ -60,6 +60,32 @@ Inseriti più di 70 prodotti, ciascuno legato a una categoria e con un prezzo ma
 - I magazzini sono riforniti con stock iniziale per numerosi prodotti.
 - Anche i negozi hanno stock indipendenti, gestiti separatamente.
 
+⚙️ Funzionalità Avanzate
+Automazione completa con trigger per aggiornamento stock e generazione ordini di riassortimento.
+
+Integrità referenziale garantita grazie a chiavi esterne e vincoli CHECK.
+
+Monitoraggio in tempo reale dello stato del magazzino e dei negozi.
+
+Scalabilità: il sistema è facilmente estendibile a nuovi prodotti, negozi o magazzini.
+
+▶️ Come usare il sistema
+Eseguire CREAZIONE_db_vendicose_spa.sql per creare il database e le tabelle.
+
+Eseguire POPOLAMENTO_db_vendicose_spa.sql per inserire dati reali e strutturati.
+
+Eseguire QUERY_db_vendicose_spa.sql per simulare vendite e verificare il comportamento dei trigger.
+
+📌 Obiettivi didattici
+Questo progetto è utile per comprendere:
+
+Progettazione logica e fisica di un database.
+
+Utilizzo di trigger e viste.
+
+Automatismi nel flusso di lavoro aziendale (es. restock automatico).
+
+Gestione relazionale complessa in contesti aziendali.
 ---
 
 ### 📌 3. `QUERY_db_vendicose_spa.sql`
