@@ -68,6 +68,22 @@ Contiene una serie di query dimostrative che simulano vendite e testano il compo
 
 #### Esempi di funzionalità:
 
-- **Verifica stock e soglie**:
   ```sql
+  - **Verifica stock e soglie**:
   SELECT * FROM VistaRestockProdotto WHERE CodiceProdotto = 'A1X3Y9' AND CodiceMagazzino = 2;
+  
+  ### Esecuzione di una vendita:
+  INSERT INTO Sales (StoreID, SalesID, LineID, ProductID, Quantity, UnitPrice, PaymentMethod)
+  VALUES ('ST2005', 1001, 1, 'A1X3Y9', 10, 1.89, 'Debit Card');
+  
+  ### Verifica degli alert sottosoglia:
+  SELECT * FROM StockAlerts;
+  
+  ### Riapprovvigionamento automatico:
+  UPDATE StockLevel
+  SET Stock = (SELECT Category.RestockLevel FROM Category 
+             JOIN Product ON Category.ID = Product.CategoryID 
+             WHERE Product.ID = StockLevel.ProductID) + 100
+  WHERE ProductID IN (SELECT ProductID FROM StockAlerts);
+
+
